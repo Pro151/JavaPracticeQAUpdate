@@ -1,0 +1,108 @@
+Certainly! Here are some Object-Oriented Programming (OOP) interview conceptual questions that are commonly asked by global tech companies like Google, J.P. Morgan, PwC, Amazon (now known as Meta), along with Java code examples and explanations for each question:
+
+1. **Question: What is Object-Oriented Programming (OOP)?**
+   - Answer: Object-Oriented Programming is a programming paradigm that uses objects to represent real-world entities and concepts. It emphasizes the concepts of classes, objects, encapsulation, inheritance, and polymorphism.
+
+2. **Question: Explain the Four Pillars of Object-Oriented Programming.**
+   - Answer: The Four Pillars of OOP are:
+     - Encapsulation: Bundling data and methods that operate on the data into a single unit (class) to hide the implementation details.
+     - Inheritance: Defining a new class based on an existing class to inherit its properties and behaviors.
+     - Polymorphism: The ability of objects of different classes to be treated as objects of a common superclass through method overriding.
+     - Abstraction: Representing essential features of an object while hiding unnecessary details.
+
+3. **Question: What is a Class and an Object? Provide an Example.**
+   - Answer: A class is a blueprint for creating objects. An object is an instance of a class. For example, consider a "Car" class with attributes like "make," "model," and "color." An object of the "Car" class could be a specific car instance, like a "Toyota Camry."
+
+4. **Question: What is Inheritance? Provide an Example.**
+   - Answer: Inheritance is the mechanism by which a new class (subclass or derived class) is created based on an existing class (superclass or base class). The subclass inherits properties and behaviors from the superclass. For example:
+   ```java
+   class Animal {
+       void eat() {
+           System.out.println("Animal is eating");
+       }
+   }
+
+   class Dog extends Animal {
+       void bark() {
+           System.out.println("Dog is barking");
+       }
+   }
+   ```
+
+5. **Question: What is Encapsulation? Provide an Example.**
+   - Answer: Encapsulation is the concept of bundling data (attributes) and methods (functions) that operate on the data into a single unit (class). It allows controlling access to the data by using access modifiers. For example:
+   ```java
+   class Student {
+       private String name;
+       private int age;
+
+       public String getName() {
+           return name;
+       }
+
+       public void setName(String name) {
+           this.name = name;
+       }
+   }
+   ```
+
+6. **Question: What is Polymorphism? Provide an Example.**
+   - Answer: Polymorphism allows objects of different classes to be treated as objects of a common superclass. Method overriding enables polymorphism. For example:
+   ```java
+   class Shape {
+       void draw() {
+           System.out.println("Drawing a shape");
+       }
+   }
+
+   class Circle extends Shape {
+       void draw() {
+           System.out.println("Drawing a circle");
+       }
+   }
+
+   class Square extends Shape {
+       void draw() {
+           System.out.println("Drawing a square");
+       }
+   }
+   ```
+
+7. **Question: What is Abstraction? Provide an Example.**
+   - Answer: Abstraction involves representing essential features of an object while hiding the complex implementation details. Abstract classes and interfaces are used to achieve abstraction. For example:
+   ```java
+   abstract class Shape {
+       abstract void draw();
+   }
+
+   class Circle extends Shape {
+       void draw() {
+           System.out.println("Drawing a circle");
+       }
+   }
+   ```
+
+8. **Question: What is the Difference Between Method Overloading and Method Overriding?**
+   - Answer: Method overloading involves defining multiple methods with the same name but different parameters within the same class. Method overriding occurs when a subclass provides a specific implementation for a method already defined in its superclass.
+
+9. **Question: What is the Diamond Problem in Multiple Inheritance, and How Does Java Handle It?**
+   - Answer: The Diamond Problem occurs when a class inherits from two classes that have a common superclass. Java resolves the Diamond Problem by using interfaces. A class can implement multiple interfaces, but it can only extend one class.
+
+10. **Question: What is the Use of the `super` Keyword in Java? Provide an Example.**
+    - Answer: The `super` keyword is used to refer to the superclass of the current class. It can be used to call a superclass constructor or method. For example:
+    ```java
+    class Parent {
+        void display() {
+            System.out.println("Parent class method");
+        }
+    }
+
+    class Child extends Parent {
+        void display() {
+            super.display(); // Calling parent class method
+            System.out.println("Child class method");
+        }
+    }
+    ```
+
+These OOP conceptual questions and examples cover important topics related to Object-Oriented Programming using Java. They are commonly asked in interviews at global tech companies like Google, J.P. Morgan, PwC, and Amazon (Meta). Understanding these concepts and practicing coding examples will help you prepare for OOP-related interview questions.

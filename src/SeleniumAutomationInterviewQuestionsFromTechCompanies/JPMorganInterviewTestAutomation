@@ -1,0 +1,125 @@
+Certainly! Here are some interview questions and problems that might be asked during a J.P. Morgan interview for a Quality Assurance (QA) Analyst position in automation testing, along with Java code examples for each problem:
+
+1. **Question: Explain the concept of Test Automation and its benefits.**
+   - Answer: Test Automation involves using automated tools to execute tests and compare the actual
+   outcomes with expected outcomes. It helps in reducing manual effort, increasing test coverage, improving accuracy, and facilitating regression testing.
+
+2. **Problem: Implement a Test Automation Framework using Selenium WebDriver:**
+   - Description: Create a simple test script using Selenium WebDriver to navigate to a website,
+   interact with elements, and verify a page title.
+   - Code Example (Java with Selenium):
+   ```java
+   import org.openqa.selenium.WebDriver;
+   import org.openqa.selenium.chrome.ChromeDriver;
+
+   public class SeleniumTest {
+       public static void main(String[] args) {
+           System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+           WebDriver driver = new ChromeDriver();
+
+           driver.get("https://www.example.com");
+           String expectedTitle = "Example Domain";
+           String actualTitle = driver.getTitle();
+
+           if (actualTitle.equals(expectedTitle)) {
+               System.out.println("Test Passed");
+           } else {
+               System.out.println("Test Failed");
+           }
+
+           driver.quit();
+       }
+   }
+   ```
+   - Explanation: This code uses Selenium WebDriver to open a web browser, navigate to a website,
+   and verify the page title.
+
+3. **Question: What is a Page Object Model (POM) in Test Automation?**
+   - Answer: The Page Object Model is a design pattern that represents the pages of a web
+
+   application as objects. Each page is associated with its own class, which contains the locators and methods to interact with the elements on that page.
+
+4. **Problem: Implement a Page Object Model for Login Page using Selenium:**
+   - Description: Create a Page Object Model for a login page with locators and methods to
+   interact with the login form.
+   - Code Example (Java with Selenium):
+   ```java
+   import org.openqa.selenium.By;
+   import org.openqa.selenium.WebDriver;
+   import org.openqa.selenium.WebElement;
+
+   public class LoginPage {
+       private WebDriver driver;
+       private By usernameField = By.id("username");
+       private By passwordField = By.id("password");
+       private By loginButton = By.id("loginButton");
+
+       public LoginPage(WebDriver driver) {
+           this.driver = driver;
+       }
+
+       public void enterUsername(String username) {
+           WebElement usernameElement = driver.findElement(usernameField);
+           usernameElement.sendKeys(username);
+       }
+
+       public void enterPassword(String password) {
+           WebElement passwordElement = driver.findElement(passwordField);
+           passwordElement.sendKeys(password);
+       }
+
+       public void clickLoginButton() {
+           WebElement loginButtonElement = driver.findElement(loginButton);
+           loginButtonElement.click();
+       }
+   }
+   ```
+   - Explanation: This code demonstrates a simplified Page Object Model for a login page.
+   It contains locators and methods to interact with the login form's elements.
+
+5. **Question: What is TestNG and how is it used in Test Automation?**
+   - Answer: TestNG (Test Next Generation) is a testing framework inspired by JUnit and NUnit.
+   It provides annotations, assertions, and test configuration to organize and manage test cases.
+
+6. **Problem: Write a TestNG Test Script to Test Login Functionality:**
+   - Description: Create a TestNG test script to test the login functionality using the Page
+    Object Model created earlier.
+   - Code Example (Java with TestNG):
+   ```java
+   import org.openqa.selenium.WebDriver;
+   import org.openqa.selenium.chrome.ChromeDriver;
+   import org.testng.annotations.*;
+
+   public class LoginTest {
+       private WebDriver driver;
+       private LoginPage loginPage;
+
+       @BeforeClass
+       public void setup() {
+           System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+           driver = new ChromeDriver();
+           loginPage = new LoginPage(driver);
+       }
+
+       @Test
+       public void testSuccessfulLogin() {
+           driver.get("https://www.example.com/login");
+           loginPage.enterUsername("username");
+           loginPage.enterPassword("password");
+           loginPage.clickLoginButton();
+
+           // Add assertions for successful login
+       }
+
+       @AfterClass
+       public void teardown() {
+           driver.quit();
+       }
+   }
+   ```
+   - Explanation: This code demonstrates a TestNG test script that tests the successful login functionality
+   using the Page Object Model.
+
+These examples cover interview questions and problems related to Test Automation for a QA Analyst position
+in automation testing, specifically for J.P. Morgan. They showcase concepts like Selenium WebDriver,
+Page Object Model, TestNG, and writing automated test scripts using Java.

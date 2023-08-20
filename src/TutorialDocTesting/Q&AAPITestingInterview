@@ -1,0 +1,46 @@
+What is API testing?
+API testing involves testing the functionality, reliability, performance, and security of application programming interfaces (APIs). It ensures that APIs work as intended and can handle various scenarios effectively.
+
+What are the different types of API testing?
+Types of API testing include unit testing, functional testing, integration testing, load testing, security testing, and regression testing.
+
+What is the purpose of unit testing in API testing?
+Unit testing focuses on testing individual methods or functions within the API to ensure they work as expected. It helps in early detection of defects and issues.
+
+What is an API endpoint?
+An API endpoint is a specific URL or URI to which an API request can be made to perform a particular action or retrieve data.
+
+Explain the difference between SOAP and REST APIs.
+SOAP (Simple Object Access Protocol) and REST (Representational State Transfer) are two different styles of building APIs. SOAP uses XML for message format, while REST uses lightweight formats like JSON or XML. REST is more flexible and widely used for web services.
+
+How would you perform functional testing of an API?
+Functional testing involves validating that the API behaves as documented. You would create test cases to send requests to the API endpoints with specific input data and compare the actual responses with the expected results.
+
+What is the purpose of integration testing for APIs?
+Integration testing ensures that different components, including APIs, interact seamlessly. It tests the data exchange and communication between various components.
+
+What is load testing in API testing?
+Load testing involves assessing an API's performance and stability under varying levels of load and stress. It helps identify bottlenecks and performance issues.
+
+Explain the importance of security testing for APIs.
+Security testing ensures that APIs are not vulnerable to unauthorized access, data breaches, or other security risks. It helps identify vulnerabilities and threats.
+
+What is Postman, and how is it used in API testing?
+Postman is a popular tool for designing, testing, and documenting APIs. It allows you to create and send API requests, view responses, and organize test suites.
+
+How would you handle authentication in API testing?
+Authentication can be handled using various methods such as API keys, tokens, OAuth, or basic authentication. You would include the necessary credentials in the request headers.
+
+Explain the concept of mocking in API testing.
+Mocking involves creating simulated versions of dependent components to isolate the component being tested. In API testing, mocking can be used to simulate API responses from external services.
+
+What are some challenges you might face while performing API testing?
+Challenges include handling data dependencies, maintaining test data, managing different environments, ensuring data privacy, and addressing changes in the API's behavior.
+
+How do you ensure that your API tests are maintainable and reusable?
+To ensure maintainability and reusability, you can use testing frameworks, follow a modular approach, create meaningful test names and descriptions, and use proper documentation.
+
+Can you explain the concept of contract testing in API testing?
+Contract testing involves ensuring that the interactions between services (APIs) conform to predefined agreements. It verifies that APIs communicate correctly based on their expected inputs and outputs.
+
+These interview questions cover various aspects of API testing, including types of testing, tools, methodologies, security, performance, and best practices. Preparing answers to these questions will help you demonstrate your understanding of API testing concepts during your interview.

@@ -1,0 +1,55 @@
+Certainly! Here are some common Postman-related interview questions that can help you prepare for an interview focused on using Postman for API testing:
+
+What is Postman, and how is it used in API testing?
+Postman is a popular API development and testing tool. It allows you to design, test, and document APIs. You can create API requests, send them, view responses, and even automate tests.
+
+How do you create and send a GET request in Postman?
+To send a GET request in Postman:
+
+Open Postman.
+Select the request type as GET.
+Enter the URL of the API endpoint.
+Click the "Send" button to send the request and view the response.
+Explain the difference between a collection and a folder in Postman.
+A collection is a group of related requests, scripts, and documentation. A folder is a way to further organize requests within a collection. Folders can help categorize requests based on different aspects.
+
+How can you parameterize requests in Postman?
+You can parameterize requests using environment variables or global variables. Define variables in the environment or in the collection, and then use them in the request's URL, headers, or body.
+
+What are environments in Postman, and why are they useful?
+Environments in Postman allow you to store and manage different sets of variables. This is useful when you need to test the same API across different environments (e.g., development, staging, production).
+
+How do you set up authentication for an API request in Postman?
+To set up authentication in Postman:
+
+Select the "Authorization" tab in the request.
+Choose the appropriate authentication type (e.g., Basic Auth, Bearer Token, API Key).
+Provide the necessary credentials or tokens.
+How can you automate tests in Postman?
+You can automate tests in Postman using scripts. In the "Tests" tab of a request, you can write JavaScript code to perform assertions on the response data.
+
+What is a Postman test script, and can you provide an example?
+A Postman test script is JavaScript code that runs after the request is sent. Here's an example of a test script that asserts the status code and a response value:
+
+javascript
+Copy code
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response body contains 'success'", function () {
+    pm.expect(pm.response.text()).to.include("success");
+});
+How can you share your Postman collections with team members?
+You can share Postman collections with team members by exporting the collection as a JSON or YAML file and then sharing the file. Team members can import the collection using the "Import" feature in Postman.
+
+Explain the concept of Newman in Postman.
+Newman is the command-line companion tool for Postman. It allows you to run Postman collections from the command line, which is useful for automation and continuous integration.
+
+How can you handle dynamic data, such as timestamps, in Postman requests?
+You can use Postman's built-in functions to generate dynamic data. For example, you can use pm.variables.set() to set variables and pm.variables.get() to retrieve them.
+
+What is Postman's "Pre-request Script," and when would you use it?
+The "Pre-request Script" is a script that runs before sending the request. You can use it to set up dynamic variables, authentication, or any other data manipulation that needs to happen before the request is sent.
+
+These questions cover various aspects of using Postman for API testing, including sending requests, scripting, automation, authentication, sharing collections, and handling dynamic data. Preparing answers to these questions will help you showcase your proficiency with Postman during an interview.

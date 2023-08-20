@@ -1,0 +1,152 @@
+Certainly! Object-Oriented Programming (OOP) is a programming paradigm that uses objects and classes to model real-world entities and their interactions. Here are the key OOP concepts in Java, each with an individual example:
+
+**1. Class and Object:**
+A class is a blueprint for creating objects, while an object is an instance of a class.
+
+Example:
+```java
+class Car {
+    String brand;
+    String model;
+
+    void start() {
+        System.out.println("Car is starting.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.brand = "Toyota";
+        myCar.model = "Camry";
+        myCar.start();
+    }
+}
+```
+
+**2. Inheritance:**
+Inheritance allows a class to inherit properties and behaviors from another class (superclass).
+
+Example:
+```java
+class Animal {
+    void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Woof woof");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        myDog.makeSound();
+    }
+}
+```
+
+**3. Polymorphism:**
+Polymorphism allows objects of different classes to be treated as objects of a common superclass.
+
+Example:
+```java
+class Shape {
+    void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+class Square extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a square");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = new Circle();
+        Shape square = new Square();
+
+        circle.draw(); // Output: Drawing a circle
+        square.draw(); // Output: Drawing a square
+    }
+}
+```
+
+**4. Encapsulation:**
+Encapsulation restricts access to certain components of an object, encapsulating the data within methods.
+
+Example:
+```java
+class BankAccount {
+    private double balance;
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount();
+        account.deposit(1000);
+        double balance = account.getBalance();
+        System.out.println("Balance: " + balance);
+    }
+}
+```
+
+**5. Abstraction:**
+Abstraction allows you to define the essential features of an object while hiding the unnecessary details.
+
+Example:
+```java
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+class Square extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a square");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = new Circle();
+        Shape square = new Square();
+
+        circle.draw(); // Output: Drawing a circle
+        square.draw(); // Output: Drawing a square
+    }
+}
+```
+
+These examples illustrate key OOP concepts in Java, showcasing how classes, objects, inheritance, polymorphism, encapsulation, and abstraction can be applied in practical scenarios.

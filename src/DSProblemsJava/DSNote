@@ -1,0 +1,111 @@
+1. Arrays:
+Arrays are a basic data structure that stores elements of the same data type in contiguous memory locations.
+
+java
+Copy code
+int[] numbers = { 10, 20, 30, 40, 50 };
+String[] names = { "Alice", "Bob", "Charlie" };
+
+2. Lists:
+Lists are dynamic data structures that can store elements of varying data types. Java provides several implementations, such as ArrayList and LinkedList.
+
+java
+Copy code
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+List<Integer> arrayList = new ArrayList<>();
+List<String> linkedList = new LinkedList<>();
+
+arrayList.add(10);
+arrayList.add(20);
+linkedList.add("Alice");
+linkedList.add("Bob");
+
+3. Stacks:
+Stacks are linear data structures that follow the Last-In-First-Out (LIFO) principle.
+
+java
+Copy code
+import java.util.Stack;
+
+Stack<Integer> stack = new Stack<>();
+stack.push(10);
+stack.push(20);
+int poppedValue = stack.pop(); // Pops 20
+
+
+4. Queues:
+Queues are linear data structures that follow the First-In-First-Out (FIFO) principle.
+
+java
+Copy code
+import java.util.Queue;
+import java.util.LinkedList;
+
+Queue<String> queue = new LinkedList<>();
+queue.add("Alice");
+queue.add("Bob");
+String removedValue = queue.poll(); // Removes and returns "Alice"
+
+5. Sets:
+Sets are collections that do not allow duplicate elements. Java provides HashSet, LinkedHashSet, and TreeSet implementations.
+
+java
+Copy code
+import java.util.HashSet;
+import java.util.Set;
+
+Set<Integer> hashSet = new HashSet<>();
+hashSet.add(10);
+hashSet.add(20);
+hashSet.add(10); // Duplicate value, not added
+
+6. Maps:
+Maps store key-value pairs. Java provides HashMap, LinkedHashMap, and TreeMap implementations.
+
+java
+Copy code
+import java.util.HashMap;
+import java.util.Map;
+
+Map<String, Integer> hashMap = new HashMap<>();
+hashMap.put("Alice", 25);
+hashMap.put("Bob", 30);
+int age = hashMap.get("Alice"); // Retrieves 25
+
+7. Linked Lists:
+Linked lists consist of nodes, where each node contains data and a reference to the next node.
+
+java
+Copy code
+class Node {
+    int data;
+    Node next;
+}
+
+Node node1 = new Node();
+node1.data = 10;
+Node node2 = new Node();
+node2.data = 20;
+node1.next = node2;
+
+8. Trees:
+Trees are hierarchical data structures with a root node and child nodes. Binary trees have at most two children per node.
+
+java
+Copy code
+class TreeNode {
+    int data;
+    TreeNode left;
+    TreeNode right;
+}
+
+TreeNode root = new TreeNode();
+root.data = 50;
+root.left = new TreeNode();
+root.left.data = 30;
+root.right = new TreeNode();
+root.right.data = 70;
+These examples cover a range of basic Java data structures, each suited for different scenarios and use cases. Understanding these data structures is essential for effective programming and problem-solving.

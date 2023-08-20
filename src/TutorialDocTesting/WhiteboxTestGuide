@@ -1,0 +1,53 @@
+White box testing, also known as structural testing or code-based testing, involves examining the internal logic and structure of the software code to ensure that it functions correctly. Testers who perform white box testing have access to the source code and use their understanding of the code's behavior to design tests that cover various paths and conditions.
+
+Here's a simple example of white box testing using a Java code snippet and JUnit, a popular testing framework:
+
+Assume you have a function `calculateTotal` that calculates the total price of items in a shopping cart:
+
+```java
+public class ShoppingCart {
+    public double calculateTotal(double[] items) {
+        double total = 0;
+        for (double item : items) {
+            total += item;
+        }
+        return total;
+    }
+}
+```
+
+To perform white box testing on this function, you could design tests that cover different code paths and conditions. For instance:
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class ShoppingCartTest {
+    private ShoppingCart cart = new ShoppingCart();
+
+    @Test
+    public void testCalculateTotalWithEmptyCart() {
+        double[] items = {};
+        double total = cart.calculateTotal(items);
+        assertEquals(0, total, 0.001);  // Check that total is close to 0
+    }
+
+    @Test
+    public void testCalculateTotalWithSingleItem() {
+        double[] items = {10.0};
+        double total = cart.calculateTotal(items);
+        assertEquals(10.0, total, 0.001);  // Check that total matches the single item
+    }
+
+    @Test
+    public void testCalculateTotalWithMultipleItems() {
+        double[] items = {10.0, 20.0, 30.0};
+        double total = cart.calculateTotal(items);
+        assertEquals(60.0, total, 0.001);  // Check that total is the sum of all items
+    }
+}
+```
+
+In this example, we're testing various scenarios of the `calculateTotal` function, including an empty cart,
+a cart with a single item, and a cart with multiple items. By examining the code and designing tests to cover different paths and conditions (edge cases),
+white box testing helps ensure that the code functions correctly and that potential bugs are identified and fixed.

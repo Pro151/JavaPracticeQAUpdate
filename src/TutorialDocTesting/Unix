@@ -1,0 +1,58 @@
+Sure, here are some commonly used Unix commands for daily use:
+
+1. **Navigation and File Operations:**
+   - `ls`: List files and directories in the current directory.
+   - `cd`: Change directory.
+   - `pwd`: Print the current working directory.
+   - `mkdir`: Create a new directory.
+   - `rm`: Remove a file or directory (use with caution).
+   - `cp`: Copy files or directories.
+   - `mv`: Move or rename files or directories.
+   - `touch`: Create an empty file.
+   - `chmod`: Change file permissions.
+   - `chown`: Change file ownership.
+
+2. **Text Editing:**
+   - `nano` or `vi`: Text editors to create or edit files.
+   - `cat`: Display the contents of a file.
+   - `grep`: Search for patterns in files.
+   - `sed`: Stream editor for text manipulation.
+   - `awk`: Text processing tool for data extraction and reporting.
+
+3. **Working with Processes:**
+   - `ps`: Display information about running processes.
+   - `top`: Display real-time system information and running processes.
+   - `kill`: Terminate processes.
+   - `pkill`: Terminate processes by name.
+   - `bg`: Run a process in the background.
+   - `fg`: Bring a background process to the foreground.
+
+4. **System Information:**
+   - `uname`: Display system information.
+   - `df`: Display disk space usage.
+   - `du`: Display file and directory space usage.
+   - `free`: Display memory usage.
+
+5. **Archiving and Compression:**
+   - `tar`: Create or extract tar archives.
+   - `gzip`: Compress files using the gzip algorithm.
+   - `zip` and `unzip`: Create or extract zip archives.
+
+6. **Networking:**
+   - `ifconfig` or `ip`: Display network interface information.
+   - `ping`: Send ICMP echo requests to test network connectivity.
+   - `nslookup` or `dig`: Perform DNS lookups.
+   - `ssh`: Securely access remote servers over SSH.
+
+7. **User Management:**
+   - `whoami`: Display the current user.
+   - `who`: Display information about users currently logged in.
+   - `useradd`: Add a new user.
+   - `passwd`: Change user password.
+
+8. **Package Management:**
+   - `apt-get` (Debian/Ubuntu) or `yum` (RHEL/CentOS): Install, update, or remove software packages.
+
+Remember to use the `man` command (e.g., `man ls`) to access the manual
+pages and learn more about each command and its options. Additionally, be cautious when
+using commands that involve file deletion or system modification. Always double-check before executing such commands.

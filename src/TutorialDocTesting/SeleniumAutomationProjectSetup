@@ -1,0 +1,113 @@
+Setting up a Selenium automation project involves several steps, including configuring the project structure, adding dependencies, creating configuration files, and writing test scripts. Here's a step-by-step guide on how to set up a Selenium automation project using Java:
+
+**1. Project Structure:**
+Create a folder structure for your project. Here's a simplified structure:
+
+```
+SeleniumProject/
+|-- src/
+|   |-- main/
+|   |   |-- java/
+|   |   |   |-- config/
+|   |   |   |   |-- ConfigProperties.java
+|   |   |   |-- tests/
+|   |   |       |-- TestScript.java
+|-- pom.xml
+```
+
+**2. Configuration Properties:**
+Create a `ConfigProperties.java` file under the `config` package to store your configuration settings. This can include browser settings, URLs, timeouts, etc.
+
+```java
+package config;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class ConfigProperties {
+    private static Properties properties = new Properties();
+
+    static {
+        try {
+            FileInputStream fileInputStream = new FileInputStream("src/main/resources/config.properties");
+            properties.load(fileInputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String getProperty(String key) {
+        return properties.getProperty(key);
+    }
+}
+```
+
+**3. Configuration Properties File:**
+Create a `config.properties` file under `src/main/resources` to store your configuration settings.
+
+```
+# Browser settings
+browser = chrome
+
+# Application URL
+app.url = https://www.example.com
+
+# Timeout settings
+wait.timeout = 10
+```
+
+**4. Test Script:**
+Create a `TestScript.java` file under the `tests` package to write your test scripts.
+
+```java
+package tests;
+
+import config.ConfigProperties;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class TestScript {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(ConfigProperties.getProperty("wait.timeout")));
+
+        driver.get(ConfigProperties.getProperty("app.url"));
+
+        WebElement element = driver.findElement(By.id("element_id"));
+        element.click();
+
+        WebElement inputElement = driver.findElement(By.cssSelector("input[name='username']"));
+        inputElement.sendKeys("your_username");
+
+        // Other test steps and assertions
+
+        driver.quit();
+    }
+}
+```
+
+**5. Maven Configuration:**
+Create a `pom.xml` file in your project root directory to manage dependencies. Add the Selenium WebDriver dependency.
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>3.141.59</version>
+    </dependency>
+</dependencies>
+```
+
+**6. Execute the Test:**
+Run the `TestScript` class to execute your Selenium test.
+
+Remember to replace `"path/to/chromedriver"` with the actual path to the ChromeDriver executable on your system. Customize the configuration properties and test scripts as per your requirements.
+
+This setup provides a basic structure for a Selenium automation project. You can expand it by adding reporting, using testing frameworks like TestNG or JUnit, implementing page object models, and more.

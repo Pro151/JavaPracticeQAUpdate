@@ -1,0 +1,118 @@
+Certainly! Here are some Object-Oriented Programming (OOP) interview questions and problems that are commonly asked for QA Lead or Senior QA roles in tech product-based companies. Each question comes with a Java code example and an explanation:
+
+1. **Question: Explain the SOLID Principles in Object-Oriented Design.**
+   - Answer: The SOLID principles are a set of design principles that aim to create maintainable and flexible software:
+     - Single Responsibility Principle (SRP): A class should have only one reason to change.
+     - Open/Closed Principle (OCP): Software entities should be open for extension but closed for modification.
+     - Liskov Substitution Principle (LSP): Objects of a superclass should be replaceable with objects of a subclass without affecting program correctness.
+     - Interface Segregation Principle (ISP): Clients should not be forced to depend on interfaces they do not use.
+     - Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules. Both should depend on abstractions.
+
+2. **Problem: Implement a Logger Interface Following SOLID Principles:**
+   - Description: Create a logger interface that adheres to the Interface Segregation Principle, and implement different logger classes.
+   - Code Example (Java):
+   ```java
+   interface Logger {
+       void log(String message);
+   }
+
+   class ConsoleLogger implements Logger {
+       public void log(String message) {
+           System.out.println("Console: " + message);
+       }
+   }
+
+   class FileLogger implements Logger {
+       public void log(String message) {
+           // Implement file logging
+       }
+   }
+   ```
+
+3. **Question: Explain the Difference Between Shallow Copy and Deep Copy.**
+   - Answer: Shallow copy copies the references of objects but not the objects themselves. Deep copy creates new objects and copies the values of the original objects.
+
+4. **Problem: Implement a Deep Copy of a Complex Object:**
+   - Description: Create a deep copy method for a complex object that contains nested objects.
+   - Code Example (Java):
+   ```java
+   class Address {
+       String city;
+       String state;
+   }
+
+   class Employee implements Cloneable {
+       String name;
+       Address address;
+
+       public Employee(String name, Address address) {
+           this.name = name;
+           this.address = address;
+       }
+
+       @Override
+       protected Employee clone() throws CloneNotSupportedException {
+           Employee cloned = (Employee) super.clone();
+           cloned.address = new Address();
+           cloned.address.city = this.address.city;
+           cloned.address.state = this.address.state;
+           return cloned;
+       }
+   }
+   ```
+
+5. **Question: Explain the Concept of Mocking in Unit Testing.**
+   - Answer: Mocking involves creating simulated objects (mocks) to replace real objects in unit tests. Mocks help isolate the unit under test and control the behavior of dependencies.
+
+6. **Problem: Write a Unit Test with Mocking Using a Testing Framework (e.g., Mockito):**
+   - Description: Write a unit test for a class that uses an external service dependency. Mock the external service using a testing framework.
+   - Code Example (Java with Mockito):
+   ```java
+   import org.junit.jupiter.api.Test;
+   import static org.mockito.Mockito.*;
+
+   class ExternalService {
+       String getData() {
+           return "External Data";
+       }
+   }
+
+   class DataService {
+       private ExternalService externalService;
+
+       public DataService(ExternalService externalService) {
+           this.externalService = externalService;
+       }
+
+       String fetchData() {
+           return externalService.getData();
+       }
+   }
+
+   class DataServiceTest {
+       @Test
+       void testFetchDataWithMocking() {
+           ExternalService mockService = mock(ExternalService.class);
+           when(mockService.getData()).thenReturn("Mocked Data");
+
+           DataService dataService = new DataService(mockService);
+           String result = dataService.fetchData();
+
+           // Assert result
+       }
+   }
+   ```
+
+7. **Question: Explain the Importance of Continuous Integration and Continuous Deployment (CI/CD) in Testing.**
+   - Answer: CI/CD automates the process of testing, building, and deploying software, ensuring frequent and reliable releases. It helps identify and fix issues early in the development cycle.
+
+8. **Problem: Describe a Scenario Where Automated Tests Can Fail Unexpectedly Due to Environmental Factors:**
+   - Description: Explain how automated tests might fail due to factors like network conditions, database state, or external services.
+
+9. **Question: Describe a Situation Where You Needed to Handle a Flaky Test in a Test Suite.**
+   - Answer: A flaky test is a test that sometimes passes and sometimes fails for the same codebase. Handling flaky tests involves investigating and addressing the root cause to improve test stability.
+
+10. **Problem: Write a Test Plan for Testing a Mobile Application:**
+    - Description: Create a comprehensive test plan that covers functional, usability, performance, and security testing for a mobile application.
+
+These OOP interview questions and problems are designed for QA Lead or Senior QA roles in tech product-based companies. They cover concepts like SOLID principles, copying objects, unit testing with mocking

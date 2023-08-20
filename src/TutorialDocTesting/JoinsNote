@@ -1,0 +1,58 @@
+Certainly! Here's an example of a conceptual SQL interview question that might be asked in an interview:
+
+**Question:**
+Explain the differences between INNER JOIN, LEFT JOIN (or LEFT OUTER JOIN),
+and RIGHT JOIN (or RIGHT OUTER JOIN). Provide an example for each type of join to illustrate your explanation.
+
+**Answer:**
+
+**INNER JOIN:**
+- The INNER JOIN returns only the rows where there is a match in both tables based on the specified condition.
+- It combines rows from two or more tables where the join condition is satisfied.
+
+Example:
+Suppose we have two tables: "employees" and "departments." We want to retrieve the names of employees along
+with their corresponding department names.
+
+```sql
+SELECT e.name, d.department_name
+FROM employees e
+INNER JOIN departments d ON e.department_id = d.department_id;
+```
+
+**LEFT JOIN (LEFT OUTER JOIN):**
+- The LEFT JOIN returns all rows from the left table (the first table listed) and the matching rows from the right
+table (the second table listed).
+- If there's no match in the right table, NULL values are returned.
+
+Example:
+Continuing with the "employees" and "departments" tables, let's say we want to retrieve all department
+names along with the employees' names, even if some departments have no employees.
+
+```sql
+SELECT d.department_name, e.name
+FROM departments d
+LEFT JOIN employees e ON d.department_id = e.department_id;
+```
+
+**RIGHT JOIN (RIGHT OUTER JOIN):**
+- The RIGHT JOIN is similar to the LEFT JOIN, but it returns all rows from the right table and the
+ matching rows from the left table.
+- If there's no match in the left table, NULL values are returned.
+
+Example:
+Assume we want to retrieve all employee names along with their corresponding department names,
+ensuring that all employees are included, even if some departments are missing.
+
+```sql
+SELECT e.name, d.department_name
+FROM employees e
+RIGHT JOIN departments d ON e.department_id = d.department_id;
+```
+
+It's important to note that not all database systems support RIGHT JOIN. In some cases,
+you can achieve the same result as RIGHT JOIN by reversing the order of the tables in a LEFT JOIN.
+
+Understanding these types of joins and their differences is crucial for effectively retrieving data
+from multiple tables in a database.
+ Make sure to practice these concepts and examples to demonstrate your understanding in an interview setting.

@@ -1,0 +1,34 @@
+
+Certainly! Here are some object-oriented programming (OOP) problems in Java that can help you practice and deepen your understanding of OOP concepts:
+
+1. Class and Objects - Bank Account:
+Create a class BankAccount with properties like account number, account holder name, balance, and methods like deposit, withdraw, and display balance.
+
+2. Inheritance - Shapes Hierarchy:
+Design a hierarchy of classes representing different shapes (e.g., Circle, Rectangle, Triangle) that inherit from a common base class Shape. Include methods to calculate area and perimeter for each shape.
+
+3. Polymorphism - Vehicle Polymorphism:
+Create a base class Vehicle with methods like start(), stop(), and subclasses Car, Motorcycle, and Bus. Override the methods in each subclass to display appropriate messages.
+
+4. Encapsulation - Student Information:
+Create a class Student with private properties like name, roll number, and methods to set and get these properties. Implement encapsulation by providing public methods to access the private properties.
+
+5. Abstraction - Banking Application:
+Design an abstract class Bank with methods like checkBalance(), deposit(), and withdraw(). Create subclasses SavingsAccount and CurrentAccount that extend the abstract class and implement the methods.
+
+6. Interfaces - Music Player:
+Define an interface MediaPlayer with methods like play(), pause(), and stop(). Create classes AudioPlayer and VideoPlayer that implement the interface and provide specific implementations.
+
+7. Constructor Overloading - Employee Details:
+Create a class Employee with properties like name, id, salary, and different constructors to initialize the properties. Demonstrate constructor overloading.
+
+8. Method Overriding - Animal Sounds:
+Create a base class Animal with a method makeSound(). Create subclasses like Dog, Cat, and Cow that override the method to display the sound of each animal.
+
+9. Static Members - Counter Class:
+Design a class Counter with a static variable count to keep track of the number of objects created. Implement methods to increment and display the count.
+
+10. Abstract Class vs Interface - Shapes:
+Create an abstract class AbstractShape with abstract methods calculateArea() and calculatePerimeter(). Implement this class in two concrete classes: Circle and Square. Also, define an interface Resizable with a method to resize shapes and implement it in Circle.
+
+These problems cover various OOP concepts such as classes, objects, inheritance, polymorphism, encapsulation, abstraction, interfaces, and more. Solving these problems will not only help you practice your Java programming skills but also enhance your understanding of object-oriented programming principles.

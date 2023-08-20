@@ -1,0 +1,35 @@
+The `main` method in Java is a special method that serves as the entry point for a Java program. It is the method that the Java Virtual Machine (JVM) looks for when starting a Java application. The `main` method is where the execution of your Java program begins.
+
+Here's the standard syntax of the `main` method:
+
+```java
+public static void main(String[] args) {
+    // Your code here
+}
+```
+
+Let's break down the components of the `main` method declaration:
+
+- `public`: This access modifier indicates that the `main` method can be accessed from outside the class. It allows the JVM to call the method when the program starts.
+
+- `static`: This modifier means that the `main` method belongs to the class itself, not to an instance of the class. Since the JVM starts running the program without creating an instance of the class, the `main` method must be `static`.
+
+- `void`: This keyword indicates that the `main` method does not return any value.
+
+- `main`: This is the name of the method. It's a standard name used for the entry point method in Java programs.
+
+- `(String[] args)`: This is the parameter list. The `main` method takes a single parameter, an array of strings called `args`. This parameter is used to pass command-line arguments to the program.
+
+When you run a Java program, the JVM looks for the `main` method with the exact signature mentioned above. It then executes the code inside the `main` method's body. You can write your application's logic, perform calculations, call other methods, and execute various tasks within the `main` method.
+
+Here's a simple example of a `main` method:
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+In this example, the `main` method outputs the "Hello, World!" message to the console when the program is run.

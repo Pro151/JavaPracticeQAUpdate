@@ -1,0 +1,33 @@
+The `MOD` function in SQL is used to return the remainder of a division operation.
+It calculates the remainder when one number (the dividend) is divided by another number (the divisor). Here's an example of how to use the `MOD` function:
+
+Suppose you have a table named "numbers" with a column "value" that contains various numbers.
+ You want to retrieve the numbers that are divisible by 5, along with their remainders when divided by 5.
+
+Here's how you can achieve this using the `MOD` function:
+
+```sql
+SELECT value, MOD(value, 5) AS remainder
+FROM numbers
+WHERE MOD(value, 5) = 0;
+```
+
+In this example:
+- The `MOD(value, 5)` calculates the remainder of each value in the "value" column when divided by 5.
+- The `WHERE` clause filters the results to include only the rows where the remainder is 0,
+ indicating that the number is divisible by 5.
+
+For instance, if the "numbers" table contains the values 10, 15, 20, 25, and 30, the query would return:
+
+```
+| value | remainder |
+|-------|-----------|
+| 10    | 0         |
+| 15    | 0         |
+| 20    | 0         |
+| 25    | 0         |
+| 30    | 0         |
+```
+
+This query demonstrates how the `MOD` function can be used to filter and retrieve data based on the remainder
+ of a division operation.

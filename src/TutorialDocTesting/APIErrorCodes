@@ -1,0 +1,31 @@
+API error codes are standardized identifiers used by web services and APIs to indicate the status or outcome of a request. These codes help developers understand what went wrong when interacting with an API. Here are some commonly used HTTP status codes along with their meanings:
+
+200 OK: The request was successful, and the server returned the requested data.
+
+201 Created: The request was successful, and a new resource was created as a result.
+
+204 No Content: The request was successful, but there is no response body to send back (often used for DELETE requests).
+
+400 Bad Request: The server could not understand the request due to invalid syntax or parameters provided by the client.
+
+401 Unauthorized: The client's request lacks proper authentication credentials or the provided credentials are invalid.
+
+403 Forbidden: The client does not have permission to access the requested resource.
+
+404 Not Found: The requested resource was not found on the server.
+
+405 Method Not Allowed: The requested HTTP method is not allowed for the requested resource.
+
+409 Conflict: The request could not be processed due to a conflict with the current state of the target resource.
+
+429 Too Many Requests: The client has exceeded the rate limit or quota set by the server.
+
+500 Internal Server Error: The server encountered an unexpected condition that prevented it from fulfilling the request.
+
+502 Bad Gateway: The server, while acting as a gateway or proxy, received an invalid response from an upstream server.
+
+503 Service Unavailable: The server is currently unable to handle the request due to temporary overloading or maintenance of the server.
+
+These are just a few examples of HTTP status codes used in API responses.
+Each status code carries specific meaning and can provide valuable information about the success or failure of a request.
+ When working with APIs, it's important to understand these codes and their implications for troubleshooting and error handling.

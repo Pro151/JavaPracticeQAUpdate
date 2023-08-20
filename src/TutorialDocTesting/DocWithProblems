@@ -1,0 +1,93 @@
+Sure, here are 30 object-oriented programming (OOP) problems in Java along with brief answers for your reference:
+
+Problem: Class and Object Basics
+Create a class Person with properties name and age. Create objects and display their information.
+
+Problem: Inheritance - Shapes
+Design classes Shape, Circle, and Rectangle in an inheritance hierarchy. Implement methods to calculate area and perimeter.
+
+Problem: Polymorphism - Animals
+Create a class Animal with methods sound() and movement(). Subclasses like Dog, Cat, and Bird override these methods.
+
+Problem: Encapsulation - Student
+Create a Student class with private properties like name, roll number. Implement getters and setters.
+
+Problem: Abstraction - Banking
+Create an abstract class BankAccount with methods like checkBalance(), deposit(), withdraw(). Implement subclasses.
+
+Problem: Interfaces - Vehicles
+Define an interface Vehicle with methods start() and stop(). Implement classes like Car, Bike using this interface.
+
+Problem: Constructor Overloading - Employee
+Create a class Employee with different constructors for name, id, salary, and address.
+
+Problem: Method Overriding - Shapes
+Create a base class Shape with a method draw(). Subclasses like Circle and Square override this method.
+
+Problem: Static Members - Counter
+Design a Counter class with a static variable to keep track of object count. Increment this counter with each object creation.
+
+Problem: Abstract Class vs Interface - Devices
+Create an abstract class Device with methods like turnOn() and turnOff(). Implement interfaces for Printable and Scannable.
+
+Problem: Association - ConceptualProblems.Library
+Create classes ConceptualProblems.Library, ConceptualProblems.Book, and Author. Demonstrate the relationship between these classes.
+
+Problem: Composition - Computer
+Design classes Computer, Monitor, CPU, and RAM. Create a computer object using these components.
+
+Problem: Aggregation - University
+Create classes University, Department, and Professor. Show the relationship between these classes.
+
+Problem: Method Overloading - Calculator
+Create a class Calculator with methods to perform addition, subtraction, multiplication, and division for different data types.
+
+Problem: Method Overriding - Banking
+Create classes Bank, SavingsAccount, and CurrentAccount. Override the method to calculate interest based on account type.
+
+Problem: Polymorphism - Shapes
+Design classes Shape, Circle, and Triangle. Use polymorphism to calculate area for different shapes.
+
+Problem: Inheritance - Vehicles
+Create classes Vehicle, Car, and Bike. Use inheritance to model vehicles.
+
+Problem: Abstract Class - Animals
+Design an abstract class Animal with properties name and sound. Implement classes Dog, Cat, and Horse.
+
+Problem: Encapsulation - Product
+Create a class Product with private properties name, price, and quantity. Implement methods to calculate total cost.
+
+Problem: Association - School
+Design classes School, Teacher, and Student. Show the relationship between them.
+
+Problem: Composition - Music Player
+Create classes MusicPlayer, Playlist, and Song. Demonstrate how a music player contains playlists and songs.
+
+Problem: Aggregation - College
+Create classes College, Department, and Student. Illustrate the aggregation relationship.
+
+Problem: Interfaces - Shapes
+Define an interface Shape with methods to calculate area and perimeter. Implement classes Circle, Rectangle using this interface.
+
+Problem: Method Overriding - Banking
+Create a class BankAccount with a method to check balance. Implement subclasses SavingsAccount and CurrentAccount with overridden methods.
+
+Problem: Inheritance - Employees
+Create a class Employee with properties name and salary. Implement classes Manager, Clerk, and Technician.
+
+Problem: Abstraction - Transport
+Design an abstract class Transport with methods start() and stop(). Implement classes Car, Bike, and Bus.
+
+Problem: Polymorphism - Shapes
+Create a class Shape with methods to calculate area and display shape name. Implement subclasses Circle, Square, Triangle.
+
+Problem: Encapsulation - Student
+Design a class Student with private properties name, rollNumber, and marks. Implement getters and setters.
+
+Problem: Association - College
+Create classes College, Department, and Professor. Demonstrate the association between them.
+
+Problem: Composition - House
+Design classes House, Room, and Furniture. Show how rooms contain furniture in a house.
+
+Remember, these problems are designed to cover a range of OOP concepts in Java. Feel free to expand on them, modify them, and experiment to deepen your understanding of object-oriented programming.

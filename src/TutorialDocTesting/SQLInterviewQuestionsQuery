@@ -1,0 +1,59 @@
+Certainly! Here are some common SQL interview questions along with query examples to help you prepare:
+
+**1. SELECT Basics:**
+   - Question: Retrieve all columns from the "employees" table.
+   - Query: `SELECT * FROM employees;`
+
+**2. WHERE Clause:**
+   - Question: Retrieve the names of employees whose salary is greater than $50,000.
+   - Query: `SELECT name FROM employees WHERE salary > 50000;`
+
+**3. JOINs:**
+   - Question: Retrieve the names of employees along with their department names.
+   - Query: `SELECT e.name, d.department_name FROM employees e INNER JOIN departments d ON e.department_id = d.department_id;`
+
+**4. GROUP BY and HAVING:**
+   - Question: Retrieve the average salary of employees in each department, only showing departments with an average salary greater than $60,000.
+   - Query: `SELECT department_id, AVG(salary) as avg_salary FROM employees GROUP BY department_id HAVING avg_salary > 60000;`
+
+**5. ORDER BY:**
+   - Question: Retrieve the names of employees in ascending order of their hire date.
+   - Query: `SELECT name FROM employees ORDER BY hire_date ASC;`
+
+**6. Subqueries:**
+   - Question: Retrieve the names of employees who work in departments with the lowest budget.
+   - Query:
+   ```sql
+   SELECT name
+   FROM employees
+   WHERE department_id IN (
+       SELECT department_id
+       FROM departments
+       WHERE budget = (SELECT MIN(budget) FROM departments)
+   );
+   ```
+
+**7. Self-Joins:**
+   - Question: Retrieve the names of employees and their managers' names.
+   - Query:
+   ```sql
+   SELECT e.name AS employee_name, m.name AS manager_name
+   FROM employees e
+   INNER JOIN employees m ON e.manager_id = m.employee_id;
+   ```
+
+**8. Substring and LIKE:**
+   - Question: Retrieve the names of employees whose names start with "Joh".
+   - Query: `SELECT name FROM employees WHERE name LIKE 'Joh%';`
+
+**9. Count and Distinct:**
+   - Question: Count the number of employees in each department.
+   - Query: `SELECT department_id, COUNT(*) AS employee_count FROM employees GROUP BY department_id;`
+
+**10. Aggregate Functions:**
+   - Question: Retrieve the highest and lowest salary in the "employees" table.
+   - Query: `SELECT MAX(salary) AS highest_salary, MIN(salary) AS lowest_salary FROM employees;`
+
+These examples cover a range of SQL concepts commonly tested in interviews.
+Make sure to understand these concepts and practice writing queries to solve similar problems.
+Keep in mind that real-world scenarios can be more complex, so adapt your knowledge accordingly.

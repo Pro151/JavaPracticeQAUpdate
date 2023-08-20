@@ -1,0 +1,54 @@
+Java memory allocation is a critical aspect of how Java programs manage memory during runtime. Java uses a combination of the stack and the heap to allocate memory for various purposes. Let's delve into the key concepts of memory allocation in Java:
+
+**1. Stack Memory:**
+- The stack is used to store method call frames and local variables.
+- Memory allocation is fast and managed automatically.
+- Variables are created and removed in a last-in-first-out (LIFO) manner.
+- Primitive data types and references to objects are stored on the stack.
+
+**2. Heap Memory:**
+- The heap is used to store objects and data that need to persist across methods or even program executions.
+- Memory allocation is relatively slower than the stack.
+- Objects are created using the `new` keyword, and references to objects are stored on the stack, while the actual objects are on the heap.
+- Java's garbage collector automatically reclaims memory from objects that are no longer referenced (garbage collection).
+
+**3. Method Area:**
+- Also known as the "Permanent Generation" or "Metaspace" (in later Java versions), it stores class-level data such as class metadata, static variables, and constant pool information.
+- This area is separate from the heap and stack memory.
+
+**Memory Allocation Process:**
+1. When a new Java program starts, the Java Virtual Machine (JVM) initializes the stack memory and the method area.
+2. As your program executes, the stack memory is used for method call frames and local variables.
+3. When you create objects using the `new` keyword, memory is allocated on the heap for the object's instance variables.
+4. References to objects are stored on the stack, allowing you to access objects in the heap.
+
+**Example:**
+Consider a simple Java class that represents a person:
+
+```java
+public class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Other methods...
+}
+```
+
+When you create a new `Person` object:
+```java
+Person person = new Person("Alice", 30);
+```
+
+1. The `person` reference is stored on the stack.
+2. Memory is allocated on the heap for the `Person` object's `name` and `age` instance variables.
+3. The reference to the `String` object representing "Alice" is stored in the heap memory.
+4. The `int` value 30 is stored in the object's memory on the heap.
+
+Understanding memory allocation in Java is crucial for writing efficient and memory-safe programs.
+The JVM's automatic memory management and garbage collection help simplify memory allocation,
+allowing developers to focus on writing code without worrying too much about memory management details.
