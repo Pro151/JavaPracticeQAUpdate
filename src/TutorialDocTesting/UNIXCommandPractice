@@ -1,0 +1,136 @@
+Certainly! Here are 40 Unix command interview questions suitable for a Software QA Lead position, along with examples for each question:
+
+**Navigation and File Management:**
+1. How do you navigate to your home directory?
+   Example: `cd ~`
+
+2. How do you list all files in a directory, including hidden files?
+   Example: `ls -a`
+
+3. How do you create a new directory?
+   Example: `mkdir new_directory`
+
+4. How do you rename a file?
+   Example: `mv old_filename new_filename`
+
+5. How do you delete a file?
+   Example: `rm filename`
+
+6. How do you recursively delete a directory and its contents?
+   Example: `rm -r directory_name`
+
+7. How do you copy files and directories?
+   Example: `cp source_file destination`
+
+8. How do you move a file from one directory to another?
+   Example: `mv file_name destination_directory`
+
+**Text Processing:**
+9. How do you display the contents of a text file?
+   Example: `cat file.txt`
+
+10. How do you display the first 10 lines of a file?
+    Example: `head -n 10 file.txt`
+
+11. How do you search for a specific string in a file?
+    Example: `grep "search_text" file.txt`
+
+12. How do you replace a string in a file?
+    Example: `sed 's/old_string/new_string/' file.txt`
+
+**File Permissions:**
+13. How do you change the permissions of a file to read, write, and execute for the owner?
+    Example: `chmod u+rwx file.txt`
+
+14. How do you add read permissions to a file for a group?
+    Example: `chmod g+r file.txt`
+
+**Process Management:**
+15. How do you list all currently running processes?
+    Example: `ps aux`
+
+16. How do you kill a process using its process ID (PID)?
+    Example: `kill PID`
+
+17. How do you run a process in the background?
+    Example: `command &`
+
+18. How do you check the disk space usage of a file system?
+    Example: `df -h`
+
+**Archiving and Compression:**
+19. How do you create a tar archive?
+    Example: `tar -cvf archive.tar files_to_archive`
+
+20. How do you extract files from a tar archive?
+    Example: `tar -xvf archive.tar`
+
+21. How do you compress a file using gzip?
+    Example: `gzip file.txt`
+
+22. How do you extract a gzipped file?
+    Example: `gzip -d file.txt.gz`
+
+**Networking:**
+23. How do you check network connectivity to a specific host?
+    Example: `ping host.com`
+
+24. How do you display the IP address of your machine?
+    Example: `ifconfig`
+
+25. How do you check open ports on a remote host?
+    Example: `nmap host.com`
+
+**System Information:**
+26. How do you check system memory usage?
+    Example: `free -m`
+
+27. How do you check CPU usage?
+    Example: `top`
+
+28. How do you display system information and kernel version?
+    Example: `uname -a`
+
+**Job Control:**
+29. How do you list all background jobs?
+    Example: `jobs`
+
+30. How do you bring a background job to the foreground?
+    Example: `fg %job_number`
+
+31. How do you pause a currently running process and resume it in the background?
+    Example: `Ctrl+Z`, followed by `bg`
+
+**Permissions and Ownership:**
+32. How do you change the ownership of a file?
+    Example: `chown new_owner file.txt`
+
+33. How do you change the group ownership of a file?
+    Example: `chgrp new_group file.txt`
+
+**File Manipulation:**
+34. How do you concatenate two files and redirect the output to a new file?
+    Example: `cat file1.txt file2.txt > combined_file.txt`
+
+35. How do you count the number of lines in a file?
+    Example: `wc -l file.txt`
+
+**Shell Scripting:**
+36. How do you make a shell script executable?
+    Example: `chmod +x script.sh`
+
+37. How do you pass command-line arguments to a shell script?
+    Example: `./script.sh arg1 arg2`
+
+**Environment Variables:**
+38. How do you display the value of an environment variable?
+    Example: `echo $VAR_NAME`
+
+39. How do you set an environment variable?
+    Example: `export VAR_NAME=value`
+
+**File Permissions:**
+40. How do you recursively change the permissions of a directory and its contents?
+    Example: `chmod -R permissions directory`
+
+Remember, these examples are just demonstrations. Make sure to adapt them to your actual use case and replace placeholders like file names, directory names, and host addresses with real values.

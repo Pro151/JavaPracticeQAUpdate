@@ -1,0 +1,74 @@
+Certainly, here's a list of 50 common API technical interview questions that are often asked in software QA lead interviews at product tech companies. Each question is accompanied by a brief answer and an example where applicable.
+
+**API Basics:**
+1. What is an API?
+   - Answer: An API (Application Programming Interface) is a set of protocols and tools that allows different software applications to communicate and interact with each other.
+
+2. Explain the difference between RESTful and SOAP APIs.
+   - Answer: REST (Representational State Transfer) is an architectural style using HTTP, while SOAP (Simple Object Access Protocol) is a protocol that uses XML and can work over various transport protocols.
+
+**HTTP Methods:**
+3. What are the commonly used HTTP methods in APIs?
+   - Answer: GET, POST, PUT, DELETE, PATCH, and more.
+
+4. When would you use a POST request?
+   - Answer: To send data to a server to create a new resource.
+   - Example: Creating a new user account with user details sent in the request body.
+
+**Request and Response:**
+5. How do you send data in an HTTP request?
+   - Answer: Data can be sent in the request body, query parameters, headers, or URL path.
+
+6. What is a response status code?
+   - Answer: It's a three-digit number that indicates the outcome of an HTTP request.
+
+7. Explain the meaning of HTTP status code 401.
+   - Answer: 401 indicates "Unauthorized," meaning the request lacks valid authentication credentials.
+
+8. What is the purpose of the "Accept" header in a request?
+   - Answer: It specifies the media type the client can understand in the response.
+   - Example: `Accept: application/json`
+
+**Authentication and Authorization:**
+9. How does OAuth work?
+   - Answer: OAuth is a protocol for authorization that allows an application to access a user's data on another service without exposing the user's credentials.
+
+10. What is JWT (JSON Web Token)?
+    - Answer: JWT is a compact, URL-safe means of representing claims to be transferred between two parties.
+
+**Error Handling:**
+11. How do APIs handle errors?
+    - Answer: APIs often return error codes and messages in the response body along with appropriate status codes.
+
+12. Explain the concept of rate limiting in APIs.
+    - Answer: Rate limiting restricts the number of requests a client can make within a specific time frame to prevent abuse.
+
+**Testing APIs:**
+13. What is API testing?
+    - Answer: API testing involves testing the functionality, reliability, security, and performance of APIs.
+
+14. How do you automate API testing?
+    - Answer: API testing can be automated using tools like Postman, RestAssured, or writing test scripts in programming languages.
+
+**API Security:**
+15. What is SQL injection, and how can it be prevented in APIs?
+    - Answer: SQL injection is a security vulnerability where malicious SQL queries are executed. Prevention involves using parameterized queries and input validation.
+
+16. How do you ensure API security?
+    - Answer: API security involves using authentication, authorization, HTTPS, input validation, and regular security audits.
+
+**API Documentation:**
+17. Why is API documentation important?
+    - Answer: API documentation provides information to developers about how to use an API, its endpoints, parameters, and responses.
+
+18. What tools can be used to generate API documentation?
+    - Answer: Tools like Swagger, Postman, and tools integrated with frameworks like Spring can generate API documentation.
+
+**Mocking and Testing:**
+19. What is API mocking?
+    - Answer: API mocking involves simulating the behavior of a real API to test how your application interacts with it.
+
+20. Why is mocking useful in API testing?
+    - Answer: Mocking allows you to test your application's behavior without making actual API requests, making testing faster and more controlled.
+
+These questions cover a range of important topics related to API testing and knowledge. Remember that the depth of your answers and examples should align with your experience and familiarity with APIs and testing methodologies.

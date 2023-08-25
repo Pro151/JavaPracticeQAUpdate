@@ -1,0 +1,91 @@
+Certainly, here are some SQL interview queries that are commonly asked during interviews for the role of Software QA Lead. These queries cover various aspects of SQL, including querying, testing, and data manipulation. I'll provide the queries along with brief explanations and examples:
+
+**1. Retrieve Data:**
+Retrieve all the columns from the "employees" table where the department is "QA".
+
+```sql
+SELECT * FROM employees WHERE department = 'QA';
+```
+
+**2. Aggregation:**
+Calculate the average salary of all employees in the "salary" table.
+
+```sql
+SELECT AVG(salary) FROM salary;
+```
+
+**3. Joining Tables:**
+Retrieve the names of employees along with their corresponding project names from the "employees" and "projects" tables.
+
+```sql
+SELECT e.name, p.project_name
+FROM employees e
+JOIN projects p ON e.project_id = p.project_id;
+```
+
+**4. Subqueries:**
+Retrieve the names of employees who have a salary greater than the average salary.
+
+```sql
+SELECT name
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
+```
+
+**5. Testing Scenarios:**
+You have a table named "orders" with columns "order_id", "order_date", and "status". Write a query to find the count of orders placed on a specific date with a "Completed" status.
+
+```sql
+SELECT COUNT(order_id) AS order_count
+FROM orders
+WHERE order_date = '2023-08-25' AND status = 'Completed';
+```
+
+**6. Data Modification:**
+Update the salary of an employee with ID 101 to 75000.
+
+```sql
+UPDATE employees
+SET salary = 75000
+WHERE employee_id = 101;
+```
+
+**7. Delete Records:**
+Delete all orders from the "orders" table where the status is "Cancelled".
+
+```sql
+DELETE FROM orders
+WHERE status = 'Cancelled';
+```
+
+**8. NULL Handling:**
+Retrieve the names of employees who do not have an assigned project.
+
+```sql
+SELECT name
+FROM employees
+WHERE project_id IS NULL;
+```
+
+**9. Data Validation:**
+Find duplicate entries in the "customers" table based on the "email" column.
+
+```sql
+SELECT email, COUNT(*) AS duplicate_count
+FROM customers
+GROUP BY email
+HAVING COUNT(*) > 1;
+```
+
+**10. Performance Optimization:**
+Write a query to retrieve the top 5 products with the highest sales from the "sales" table, ordered by sales amount in descending order.
+
+```sql
+SELECT product_name, SUM(sales_amount) AS total_sales
+FROM sales
+GROUP BY product_name
+ORDER BY total_sales DESC
+LIMIT 5;
+```
+
+These queries cover a range of SQL concepts and skills that Software QA Leads might need during their work. Remember to understand the fundamentals, practice writing queries, and be prepared to explain your thought process during an interview.

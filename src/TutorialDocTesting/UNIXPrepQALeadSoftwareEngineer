@@ -1,0 +1,72 @@
+Certainly, here are some common Unix command interview questions that might be asked for both Software QA Leads and Software Engineers, along with examples:
+
+**For Software QA Lead:**
+
+1. **Question:** How would you search for a specific string within multiple text files in a directory and its subdirectories?
+
+   **Answer:** You can use the `grep` command for this. For instance:
+
+   ```bash
+   grep -r "search_string" /path/to/directory
+   ```
+
+2. **Question:** Explain how you would sort a file in reverse order.
+
+   **Answer:** You can use the `sort` command with the `-r` flag:
+
+   ```bash
+   sort -r filename
+   ```
+
+3. **Question:** How do you find the process ID of a specific running process?
+
+   **Answer:** You can use the `pgrep` command or `ps` command with `grep`:
+
+   ```bash
+   pgrep process_name
+   ps aux | grep process_name
+   ```
+
+**For Software Engineer:**
+
+1. **Question:** Write a command to display the last 10 lines of a text file.
+
+   **Answer:**
+
+   ```bash
+   tail -n 10 filename
+   ```
+
+2. **Question:** How do you list all files and directories in a directory, including hidden ones?
+
+   **Answer:**
+
+   ```bash
+   ls -a
+   ```
+
+3. **Question:** Explain the usage of pipes (`|`) in Unix commands.
+
+   **Answer:** Pipes are used to send the output of one command as input to another. For example:
+
+   ```bash
+   command1 | command2
+   ```
+
+4. **Question:** Write a command to find the total size of a directory.
+
+   **Answer:**
+
+   ```bash
+   du -sh /path/to/directory
+   ```
+
+5. **Question:** How do you change the permissions of a file to make it executable?
+
+   **Answer:**
+
+   ```bash
+   chmod +x filename
+   ```
+
+Remember, understanding the concepts behind these commands is crucial. While these examples provide a starting point, it's a good idea to practice using them on a Unix-like system (e.g., Linux) to get familiar with their functionality and options. Additionally, be prepared to explain your thought process and problem-solving skills while using these commands in real-world scenarios.

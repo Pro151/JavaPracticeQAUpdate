@@ -1,0 +1,89 @@
+Certainly, here are 10 SQL interview queries with examples that are commonly asked during interviews for the role of Software QA Lead. I'll provide you with the queries and examples, and you can feel free to modify them based on your specific scenario:
+
+**1. Retrieve distinct values from a table:**
+Query:
+```sql
+SELECT DISTINCT department FROM employees;
+```
+
+**2. Find the total number of employees in each department:**
+Query:
+```sql
+SELECT department, COUNT(*) AS total_employees
+FROM employees
+GROUP BY department;
+```
+
+**3. Get the highest salary from the "salaries" table:**
+Query:
+```sql
+SELECT MAX(salary) AS highest_salary
+FROM salaries;
+```
+
+**4. Calculate the average salary for employees in each department:**
+Query:
+```sql
+SELECT department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department;
+```
+
+**5. List employees who have a salary greater than the average salary:**
+Query:
+```sql
+SELECT employee_name, salary
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
+```
+
+**6. Find the most recent order date from the "orders" table:**
+Query:
+```sql
+SELECT MAX(order_date) AS most_recent_order
+FROM orders;
+```
+
+**7. Retrieve customers who have placed orders in the last 30 days:**
+Query:
+```sql
+SELECT customer_name
+FROM customers
+WHERE customer_id IN (
+    SELECT DISTINCT customer_id
+    FROM orders
+    WHERE order_date >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+);
+```
+
+**8. Identify duplicate entries in a table:**
+Query:
+```sql
+SELECT column_name, COUNT(*) AS duplicate_count
+FROM table_name
+GROUP BY column_name
+HAVING COUNT(*) > 1;
+```
+
+**9. Retrieve the top 5 products with the highest sales:**
+Query:
+```sql
+SELECT product_name, SUM(quantity_sold) AS total_sales
+FROM sales
+GROUP BY product_name
+ORDER BY total_sales DESC
+LIMIT 5;
+```
+
+**10. Calculate the percentage of passed tests for each test suite:**
+Query:
+```sql
+SELECT test_suite,
+       COUNT(CASE WHEN result = 'Pass' THEN 1 END) AS passed_tests,
+       COUNT(*) AS total_tests,
+       (COUNT(CASE WHEN result = 'Pass' THEN 1 END) / COUNT(*)) * 100 AS pass_percentage
+FROM test_results
+GROUP BY test_suite;
+```
+
+These queries cover a range of SQL concepts and are commonly used to assess the SQL skills of a Software QA Lead during interviews. Remember to adapt these queries to your specific database schema and data.

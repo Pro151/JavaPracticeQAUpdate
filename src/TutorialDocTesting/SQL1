@@ -1,0 +1,90 @@
+Certainly! Here are some SQL interview queries that are commonly asked during interviews for a Software QA Lead position, along with examples:
+
+**1. Retrieve data from a table:**
+   Retrieve all the information from the "employees" table.
+
+```sql
+SELECT * FROM employees;
+```
+
+**2. Filter data using WHERE clause:**
+   Retrieve the names of employees who have a salary greater than $50,000.
+
+```sql
+SELECT name FROM employees WHERE salary > 50000;
+```
+
+**3. Joining tables:**
+   Retrieve the names of employees along with their department names from two tables, "employees" and "departments".
+
+```sql
+SELECT e.name, d.department_name
+FROM employees e
+JOIN departments d ON e.department_id = d.department_id;
+```
+
+**4. Grouping and Aggregation:**
+   Calculate the average salary for each department.
+
+```sql
+SELECT department_id, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department_id;
+```
+
+**5. Subqueries:**
+   Retrieve the names of employees who have a salary higher than the average salary.
+
+```sql
+SELECT name
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
+```
+
+**6. Ordering results:**
+   Retrieve the names of employees in ascending order of their hire dates.
+
+```sql
+SELECT name
+FROM employees
+ORDER BY hire_date ASC;
+```
+
+**7. Using IN clause:**
+   Retrieve the names of employees who belong to departments with IDs 101, 102, and 103.
+
+```sql
+SELECT name
+FROM employees
+WHERE department_id IN (101, 102, 103);
+```
+
+**8. Limiting results:**
+   Retrieve the top 5 highest-paid employees.
+
+```sql
+SELECT name, salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 5;
+```
+
+**9. Self-Join:**
+   Retrieve the names of employees and their managers' names from the same "employees" table.
+
+```sql
+SELECT e.name AS employee_name, m.name AS manager_name
+FROM employees e
+JOIN employees m ON e.manager_id = m.employee_id;
+```
+
+**10. NULL handling:**
+   Retrieve the names of employees who do not have a manager.
+
+```sql
+SELECT name
+FROM employees
+WHERE manager_id IS NULL;
+```
+
+These queries cover a range of SQL concepts and scenarios that a Software QA Lead might encounter. During an interview, it's important not only to provide the correct query but also to explain your thought process and any optimizations you might consider for larger databases.
