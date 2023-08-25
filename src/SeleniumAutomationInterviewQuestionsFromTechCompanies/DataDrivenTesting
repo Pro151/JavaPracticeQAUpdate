@@ -1,0 +1,68 @@
+Writing a data-driven framework for Selenium automation in Java using SQL involves integrating your Selenium tests with a database to fetch test data dynamically. Here's a step-by-step guide along with an example:
+
+**Step 1: Set Up Your Environment**
+1. Make sure you have Java and Selenium WebDriver set up in your project.
+2. Download and set up a JDBC driver for the specific database you're using (e.g., MySQL, PostgreSQL).
+
+**Step 2: Create Database**
+Set up a database to store your test data. For this example, let's assume you have a database named "testdb" with a table named "testdata" containing columns "testcase" and "testdata".
+
+**Step 3: Create Test Case Structure**
+Create a class structure for your test cases. You might have a class for the test scripts and another for the data handling.
+
+**Step 4: Fetch Data from Database**
+In your data handling class, establish a database connection using the JDBC driver and execute SQL queries to retrieve test data.
+
+```java
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DatabaseUtils {
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/testdb";
+    private static final String DB_USER = "username";
+    private static final String DB_PASSWORD = "password";
+
+    public static ResultSet executeQuery(String query) throws SQLException {
+        Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+        Statement statement = connection.createStatement();
+        return statement.executeQuery(query);
+    }
+}
+```
+
+**Step 5: Use Data in Test Scripts**
+In your test script class, fetch data from the database using the `DatabaseUtils` class and use it in your Selenium tests.
+
+```java
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class DataDrivenTest {
+    public static void main(String[] args) throws SQLException {
+        ResultSet testData = DatabaseUtils.executeQuery("SELECT * FROM testdata");
+
+        while (testData.next()) {
+            String testCase = testData.getString("testcase");
+            String testDataValue = testData.getString("testdata");
+
+            // Execute your Selenium test using the fetched data
+            executeSeleniumTest(testCase, testDataValue);
+        }
+    }
+
+    public static void executeSeleniumTest(String testCase, String testData) {
+        // Your Selenium test code here
+        System.out.println("Executing test case: " + testCase);
+        System.out.println("Test data: " + testData);
+    }
+}
+```
+
+In this example, the `executeSeleniumTest` method represents your actual Selenium test logic. You'll need to replace it with your Selenium WebDriver code that interacts with the website.
+
+Remember to handle exceptions, close database connections, and ensure proper error handling in a real-world scenario.
+
+This framework allows you to manage test data in a centralized database, making it easier to maintain and update test cases without modifying the code.

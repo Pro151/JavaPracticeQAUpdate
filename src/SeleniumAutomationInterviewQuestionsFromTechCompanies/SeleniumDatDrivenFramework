@@ -1,0 +1,102 @@
+Creating a data-driven framework for Selenium automation in Java involves using external data sources, such as Excel or CSV files, to drive your test cases. This allows you to run the same test script with different sets of data, making your testing more versatile and efficient. Here's a step-by-step guide along with an example using TestNG and Apache POI for reading Excel files:
+
+**Step 1: Set Up Your Project**
+
+1. Create a new Java project in your preferred Integrated Development Environment (IDE).
+2. Add the Selenium and TestNG dependencies to your project's build path.
+
+**Step 2: Create TestNG Test Class**
+
+```java
+import org.testng.annotations.Test;
+
+public class DataDrivenTest {
+
+    @Test(dataProvider = "testData")
+    public void testLogin(String username, String password) {
+        // Your test logic using username and password
+        System.out.println("Username: " + username + ", Password: " + password);
+    }
+}
+```
+
+**Step 3: Create Data Provider**
+
+```java
+import org.testng.annotations.DataProvider;
+
+public class TestData {
+
+    @DataProvider(name = "testData")
+    public Object[][] testData() {
+        // Read data from your data source (e.g., Excel or CSV)
+        Object[][] data = {
+            {"user1", "pass1"},
+            {"user2", "pass2"},
+            // Add more data rows as needed
+        };
+        return data;
+    }
+}
+```
+
+**Step 4: Read Data from Excel Using Apache POI**
+
+Make sure you have Apache POI library added to your project.
+
+```java
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class ExcelReader {
+
+    public Object[][] readTestData(String filePath, String sheetName) throws IOException {
+        FileInputStream fis = new FileInputStream(filePath);
+        Workbook workbook = new XSSFWorkbook(fis);
+        Sheet sheet = workbook.getSheet(sheetName);
+
+        int rowCount = sheet.getLastRowNum();
+        int columnCount = sheet.getRow(0).getLastCellNum();
+
+        Object[][] data = new Object[rowCount][columnCount];
+
+        for (int i = 0; i < rowCount; i++) {
+            Row row = sheet.getRow(i + 1); // Skip header row
+
+            for (int j = 0; j < columnCount; j++) {
+                Cell cell = row.getCell(j);
+                data[i][j] = cell.toString();
+            }
+        }
+
+        workbook.close();
+        fis.close();
+
+        return data;
+    }
+}
+```
+
+**Step 5: Modify Data Provider**
+
+```java
+import org.testng.annotations.DataProvider;
+import java.io.IOException;
+
+public class TestData {
+
+    @DataProvider(name = "testData")
+    public Object[][] testData() throws IOException {
+        ExcelReader excelReader = new ExcelReader();
+        return excelReader.readTestData("path/to/your/excel/file.xlsx", "Sheet1");
+    }
+}
+```
+
+**Step 6: Run Your Test**
+
+Run the `DataDrivenTest` class as a TestNG test. TestNG will automatically use the data provided by the data provider for running your test method multiple times with different data sets.
+
+This example demonstrates a basic data-driven framework using Selenium, TestNG, and Apache POI. You can enhance this framework by adding error handling, logging, and more advanced data sources.
