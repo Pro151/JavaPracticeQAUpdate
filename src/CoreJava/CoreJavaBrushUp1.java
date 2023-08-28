@@ -32,6 +32,13 @@ public class CoreJavaBrushUp1 {
 
         int[] arr = new int[5];// 5, 10
 
+        int[] arr1 = new int[6];
+
+        arr1[0]=0;
+        arr1[1]=1;
+        arr1[2]=2;
+        arr1[3]=3;
+
         arr[0] = 1;
 
         arr[1] = 2;
@@ -47,6 +54,9 @@ public class CoreJavaBrushUp1 {
 
 
         int[] arr2 = {1,2,4,5,6};
+
+        int[] arr3={3,6,8,9,12,34,5};
+
 
 
 
@@ -80,11 +90,11 @@ public class CoreJavaBrushUp1 {
 
 
 
-        for (int i =0;i<arr2.length; i++)
+        for (int i =0;i<arr3.length; i++)
 
         {
 
-            System.out.println(arr2[i]);
+            System.out.println(arr3[i]);
 
         }
 
@@ -104,14 +114,13 @@ public class CoreJavaBrushUp1 {
 
 
 
-        for( String s: name)
+        for( String s: name) //enhanced for loop
 
         {
 
             System.out.println(s);
 
         }
-
 
 
     }
