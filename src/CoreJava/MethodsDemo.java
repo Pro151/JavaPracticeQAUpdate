@@ -8,11 +8,9 @@ package CoreJava;
 public class MethodsDemo {
 
 
-
     public static void main(String[] args) {
 
 // TODO Auto-generated method stub
-
 
 
         MethodsDemo d = new MethodsDemo();
@@ -23,37 +21,29 @@ public class MethodsDemo {
 
         MethodsDemo d1 = new MethodsDemo();
 
-        d1.getUserData();
+       // d1.getUserData();
 
         getData2();
 
 
-
-
-
     }
 
 
+    public String getData() {
 
-    public String getData()
-
-    {
-
-        System.out.println ("hello world");
+        System.out.println("hello world");
 
         return "rahul shetty";
 
     }
 
 
+    public static String getData2() {
 
-    public static String getData2()
-
-    {
-
-        System.out.println ("hello world");
+        System.out.println("hello world");
 
         return "rahul shetty";
 
     }
+}
 
